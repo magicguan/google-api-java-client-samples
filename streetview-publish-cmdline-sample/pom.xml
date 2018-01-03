@@ -7,9 +7,9 @@
     <version>5</version>
   </parent>
   <groupId>com.google.apis-samples</groupId>
-  <artifactId>taskqueue-cmdline-sample</artifactId>
-  <version>1.2.0</version>
-  <name>Example for the TaskQueue API using JSON and OAuth 2.0</name>
+  <artifactId>streetview-publish-cmdline-sample</artifactId>
+  <version>1.0.0</version>
+  <name>Example for the Street View Publish API using JSON and OAuth 2.0</name>
 
   <url>http://code.google.com/p/google-api-java-client/</url>
 
@@ -18,32 +18,11 @@
     <url>http://code.google.com/p/google-api-java-client/issues/list</url>
   </issueManagement>
 
-  <inceptionYear>2010</inceptionYear>
+  <inceptionYear>2017</inceptionYear>
 
   <prerequisites>
     <maven>2.0.9</maven>
   </prerequisites>
-
-  <scm>
-    <connection>scm:hg:https://samples.google-api-java-client.googlecode.com/hg/</connection>
-    <developerConnection>scm:hg:https://samples.google-api-java-client.googlecode.com/hg/</developerConnection>
-    <url>http://code.google.com/p/google-api-java-client/source/browse/?repo=samples</url>
-  </scm>
-
-  <developers>
-    <developer>
-      <id>vibhooti</id>
-      <name>Vibhooti Verma</name>
-      <email>vibhooti@google.com</email>
-      <organization>Google</organization>
-      <organizationUrl>http://www.google.com</organizationUrl>
-      <roles>
-        <role>owner</role>
-        <role>developer</role>
-      </roles>
-      <timezone>-5</timezone>
-    </developer>
-  </developers>
 
   <build>
     <plugins>
@@ -67,7 +46,7 @@
           </execution>
         </executions>
         <configuration>
-          <mainClass>com.google.api.services.samples.taskqueue.cmdline.TaskQueueSample</mainClass>
+          <mainClass>com.google.api.services.samples.streetview.publish.cmdline.StreetViewPublishSample</mainClass>
           <systemProperties>
             <systemProperty>
               <key>java.util.logging.config.file</key>
@@ -112,9 +91,24 @@
   </build>
   <dependencies>
     <dependency>
-      <groupId>com.google.apis</groupId>
-      <artifactId>google-api-services-taskqueue</artifactId>
-      <version>v1beta2-rev46-1.23.0</version>
+        <groupId>commons-httpclient</groupId>
+        <artifactId>commons-httpclient</artifactId>
+        <version>3.1</version>
+    </dependency>
+    <dependency>
+        <groupId>org.apache.httpcomponents</groupId>
+        <artifactId>httpmime</artifactId>
+        <version>4.5.3</version>
+    </dependency>
+    <dependency>
+        <groupId>org.apache.httpcomponents</groupId>
+        <artifactId>httpclient</artifactId>
+        <version>4.5.3</version>
+    </dependency>
+    <dependency>
+      <groupId>com.google.streetview.publish</groupId>
+      <artifactId>java-streetview-publish</artifactId>
+      <version>0.1.1</version>
     </dependency>
     <dependency>
       <groupId>com.google.http-client</groupId>
@@ -125,6 +119,16 @@
       <groupId>com.google.oauth-client</groupId>
       <artifactId>google-oauth-client-jetty</artifactId>
       <version>${project.oauth.version}</version>
+    </dependency>
+    <dependency>
+        <groupId>com.google.apis</groupId>
+        <artifactId>google-api-services-oauth2</artifactId>
+        <version>v2-rev131-1.23.0</version>
+    </dependency>
+    <dependency>
+        <groupId>com.google.api</groupId>
+        <artifactId>gax</artifactId>
+        <version>1.5.0</version>
     </dependency>
   </dependencies>
   <properties>
